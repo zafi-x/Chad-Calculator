@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: slider(),
+      child: const Splash(),
     );
   }
 }

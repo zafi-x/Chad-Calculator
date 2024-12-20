@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Calculator1 extends StatefulWidget {
   const Calculator1({super.key});
@@ -87,88 +88,91 @@ class _Calculator1State extends State<Calculator1> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(150, 23, 32, 43),
-      appBar: AppBar(
-        elevation: 10,
-        backgroundColor: Colors.black54,
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        title: const Text(
-          "Calculator",
-          style: TextStyle(fontSize: 33, fontWeight: FontWeight.w700),
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r)),
+      child: Scaffold(
+        backgroundColor: const Color.fromARGB(150, 23, 32, 43),
+        appBar: AppBar(
+          elevation: 10,
+          backgroundColor: Colors.black54,
+          foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+          title: const Text(
+            "Calculator",
+            style: TextStyle(fontSize: 33, fontWeight: FontWeight.w700),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          return Column(
-            children: [
-              Container(
-                alignment: Alignment.centerRight,
-                padding: const EdgeInsets.symmetric(
-                    vertical: 30.0, horizontal: 12.0),
-                child: Text(
-                  output,
-                  style: const TextStyle(
-                      fontSize: 48.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+        body: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            return Column(
+              children: [
+                Container(
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 30.0, horizontal: 12.0),
+                  child: Text(
+                    output,
+                    style: const TextStyle(
+                        fontSize: 48.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
                 ),
-              ),
-              const Expanded(
-                child: Divider(
-                  color: Colors.white,
+                const Expanded(
+                  child: Divider(
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      buildButton("7"),
-                      buildButton("8"),
-                      buildButton("9"),
-                      buildButton("/"),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      buildButton("4"),
-                      buildButton("5"),
-                      buildButton("6"),
-                      buildButton("*"),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      buildButton("1"),
-                      buildButton("2"),
-                      buildButton("3"),
-                      buildButton("-"),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      buildButton("."),
-                      buildButton("0"),
-                      buildButton("00"),
-                      buildButton("+"),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: buildButton("Clear"),
-                      ),
-                      Expanded(
-                        child: buildButton("="),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          );
-        },
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        buildButton("7"),
+                        buildButton("8"),
+                        buildButton("9"),
+                        buildButton("/"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        buildButton("4"),
+                        buildButton("5"),
+                        buildButton("6"),
+                        buildButton("*"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        buildButton("1"),
+                        buildButton("2"),
+                        buildButton("3"),
+                        buildButton("-"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        buildButton("."),
+                        buildButton("0"),
+                        buildButton("00"),
+                        buildButton("+"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: buildButton("Clear"),
+                        ),
+                        Expanded(
+                          child: buildButton("="),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

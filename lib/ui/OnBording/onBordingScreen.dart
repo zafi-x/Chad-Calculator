@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:max_calculator/ui/screens/simpCalculator.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -26,27 +27,32 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final pages = List.generate(6, (index) {
-      return Calculator1()
-          // Container(
-          //     decoration: BoxDecoration(
-          //       borderRadius: BorderRadius.circular(16),
-          //       color: Colors.grey.shade300,
-          //     ),
-          //     margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-          //     child: Container(
-          //       // height: 380,
-          //       child: Center(
-          //           child: Text(
-          //         "Page $index",
-          //         style: TextStyle(color: Colors.indigo),
-          //       )),
-          //     ),
-          //   )
-          ;
-    });
+    List<Widget> pages = [
+      const Calculator1(),
+    ];
+    // final pages = List.generate(6, (index) {
+    //   return
+    // Calculator1()
+    //     Container(
+    //   decoration: BoxDecoration(
+    //     borderRadius: BorderRadius.circular(16),
+    //     color: Colors.grey.shade300,
+    //   ),
+    //   margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+    //   child: Container(
+    //     // height: 380,
+    //     child: Center(
+    //         child: Text(
+    //       "Page $index",
+    //       style: TextStyle(color: Colors.indigo),
+    //     )),
+    //   ),
+    // )
+    //       ;
+    // });
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 19, 162, 212),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
